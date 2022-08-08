@@ -116,9 +116,27 @@ a.footerlink:active{
    color: lightslategray;
 }
 
+a.textlinklink{
+    color: #767171;
+}
+a.textlink:visited{
+   color: #767171;
+}
+a.textlink:hover{
+   color: #767171;
+}
+a.textlink:active{
+   color: #767171;
+}
+
 
 /*images*/
 .ashimage{
     position: relative;
     top:-30px;
     }
+
+.discordimage{
+    position: relative;
+    top:-10px;
+}
