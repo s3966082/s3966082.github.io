@@ -9,7 +9,6 @@
     <body>
     
     <header>
-        Intro to IT Assignment 1
     </header>
 
     <ul>
@@ -23,4 +22,60 @@
         Project Idea
     </h1>
 
+    <h2>
+        Overview
+    </h2>
+
+    <p>
+        My project idea is a discord emote pad/keyboard. Essentially, users will have a keyboard on which each key corresponds to a different discord emote of their choice. The keyboard would ideally come with clear, relegendable keycaps so that users can put their choice of emotes onto the keys themselves. The keyboard would essentially run through two different programs to make it work: QMK and AutoHotkey, the files of which would come in a software package that the user would have to download. Of course, the keyboard wouldn’t have to just be limited to discord emotes, they could customise it to anything that they can type out.
+    </p>
+
+    <h2>
+        Motivation
+    </h2>
+
+    <p>
+        According to estimates there are more than 300 million registered Discord accounts, 140 million of which are active monthly users. (Curry, 2022) The emote is one of Discord’s most popular features, since users are able to upload their own custom emotes to their servers, they have become a standard in communication on the site. While users have the option to either choose the emote they want to use from a list (which can get very long when joining more servers) or type the emote in colons, being such commonplace in conversation, there is a need for quicker access to these emotes. You should be able to access them with just the push of a button. Now, although one might argue that the void of this problem has already been filled with something like Elgato’s Stream Deck, the Stream Deck has its own issues that this keyboard would fix, namely, the price of the Elgato Stream Deck. (Stream Deck, 2022) With the 15-button stream deck currently retailing for $259 AUD and the Stream Deck XL, a 32-button option, retailing at $439 AUD, it is definitely a pricy solution. (Elgato Stream Deck, 2022) (Elgato Stream Deck XL, 2022) With the keyboard that I am looking to create, as long as the Printed Circuit Board (PCB) is compatible with QMK, it will be usable for this project. QMK compatible keyboards can start from under $100. Another problem with the Stream Deck is its lack of buttons, with the regular version you’re only getting 15 buttons and with the XL, you still only get 32. Once again, any QMK compatible keyboard could be used for my project, which includes full sized keyboards on which you could get up to 104 keys for customisation.
+    </p>
+
+    <h2>
+        Description
+    </h2>
+
+    <p>
+        Essentially the way this emote pad will function is through QMK and AutoHotkey. I will have to choose a QMK compatible PCB, but from there, any other elements of the keyboard will be up to choice - including switches, stabilisers, keycaps, and frames. If this was a commercial venture, the keyboard would be shipped out to the user and the user would be given a link to download the software required to make this keyboard an emote pad. The first part of this software is the base software of the keyboard, made through QMK. Through the QMK config site you are able to program each key on a keyboard which it then saves in a .json file for you to run. (QMK Configurator, 2022) However, what I want to achieve would take a little more than this. While QMK lets you program a key to any available key in Windows, I would be needing a combination of two keys, the natural value of the key on the keyboard plus some arbitrary key like F24 that is unlikely to be in use by the user. For example, the key on the keyboard that is usually assigned to “P”, when pushed on this secondary keyboard would actually output F24+P together.  This is because while Windows will let you have two keyboards plugged in at once, their keystrokes are not recognised as “unique”, i.e. there is no difference between pushing the letter “G” on the primary keyboard and pushing “G” on the secondary keyboard. Although I don’t know how to program in C, the language that QMK uses, I have been able to find some sample code online that I should be able to modify easily enough to achieve this. (Issue #6175 · qmk/qmk_firmware, 2022) Once the keyboard software is in place, I would use an AutoHotkey script to actually make it output the wanted Discord emote. The script would essentially contain instructions so that when the user pushes some modifier key, which would be decided on in development, likely ctrl or shift, plus the key on the secondary keyboard that they want to modify, an input box would pop up where they would be able to type in the emote that they want to assign to this key. The script will then write this new emote name into an .ini file to then be called on (through the AutoHotkey script) whenever the user pushes the emote key normally (it sounds like a very roundabout way of doing things but editing an .ini file is a lot simpler and more efficient than having to edit and re-run an AHK script every time the user wants to make a modification). 
+        <br>
+        This project does have a few drawbacks, one being that it would only be available on Windows as AutoHotkey is not available on Mac or Linux. The assignment of the keys being their natural values + F24 could also be problematic if for whatever reason the user already has one of these combinations assigned to something else. The other problem is that I don’t really know how to build a nice GUI or software for this type of keyboard, or even where to start, so it will feel a little DIY-y, having to download the software package and then input the emote in a very basic input box.
+    </p>
+
+    <h2>
+        Tools and Technologies
+    </h2>
+
+    <p>
+        In regard to hardware, this project would only require a QMK-compatible keyboard, of which there are many, as well as clear, relegendable keycaps. (QMK Firmware - All Supported Keyboards, 2022) These keycaps allow for paper or something similar to be stuck inside so users could print off their emotes and place them inside the keycaps. If the plan was to build the keyboard rather than outsource, I would also require a keyboard frame, switches, and stabilisers. As far as software goes, while there might be better ways to make a GUI for customising the keys, I have no idea where I would even start with something like that, and so I’ll be sticking with what I know/what I know I can learn. This project will require the QMK software, which is coded in the programming language “C”, a language which is new to me, and the AutoHotkey program/language. QMK can be programmed online for free and downloaded as a .json file to assign to your keyboard, although this project will require a little more editing than what the online config provides. AutoHotkey is also a free program, and indeed an easy one, very good for making hotkey automation programs like this one.
+    </p>
+
+    <h2>
+        Skills required
+    </h2>
+
+    <p>
+        I designed this project for it to be entirely feasible for me to complete with my current skillset, or at least things I know I can figure out through some research (of course improvements could be made to the project if I acquired other skillsets). Software-wise I have to know how to write the script in AHK and work with .ini files. At current, I am yet to work with .ini files in AHK, however I know people who have that I can ask and there are plenty of resources out there to guide me in the right direction. I’ll also need to know a small bit of C coding, however I have found a sample script which would work perfect for this project which I think I am capable of modifying for my purpose. As for the hardware, this would just include being able to put the keyboard together if I did decide to make it myself rather than outsource. Making a hot-swappable keyboard is rather simple and there are more than enough resources out there if I did need any support.
+    </p>
+
+    <h2>
+        Outcome
+    </h2>
+
+    <p class="lastparagraph">
+        If the project was successful, the outcome would be a cheap but very functional discord emote pad. Users will be able to input their favourite discord emotes with just the push of a button rather than having to search through a list or write out the emote themselves. I would hope that something like this would make macro pads a lot more accessible to people without any coding experience as products like Elgato’s Stream Deck are outrageously expensive since they don’t have many competitors.
+    </p>
+
+    <footer>
+        <a href="./references.html" class="footerlink">References</a>
+        <br>
+        <a href="github.com/s3966082" class="footerlink">GitHub</a>
+    </footer>
+</body>
 </html>
