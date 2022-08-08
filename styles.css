@@ -12,6 +12,7 @@ ul {
     height: 100%;
     overflow: auto;
     font-size: 20px;
+    font-family: 'Martel', serif;
   }
   
   li a {
@@ -43,7 +44,7 @@ h1{
 
 h2{
     color: #8EAADB;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Martel', serif;
     margin-left: 25%;
 }
@@ -64,4 +65,27 @@ header{
     font-family: 'Martel', serif;
     padding: 1%;
     text-align: center;
+}
+
+/*paragraphs*/
+p{
+    margin-left: 25%;
+    margin-right: 10%;
+    font-size: 20px;
+    color: #767171;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*links*/
+a.headinglink:link{
+   color: #8EAADB;
+}
+a.headinglink:visited{
+   color: #8EAADB;
+}
+a.headinglink:hover{
+   color: #8EAADB;
+}
+a.headinglink:active{
+   color: #8EAADB;
 }
